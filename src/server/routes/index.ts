@@ -8,6 +8,7 @@ router.put("/", (req, res) => {
   res.status(StatusCodes.UNAUTHORIZED).json(req.body);
 });
 
-router.put("/cidade", CidadeControler.create);
+router.put("/cidade", CidadeControler.createValidation, CidadeControler.create);
+router.get("/cidade", CidadeControler.getAllValidation, CidadeControler.getAll);
 
 export { router };
